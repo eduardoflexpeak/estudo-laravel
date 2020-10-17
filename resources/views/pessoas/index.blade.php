@@ -34,6 +34,7 @@
               <!-- Essa linha faz tal coisa 1 -->
               {{-- Essa linha faz tal coisa 2 --}}
               <a href="/pessoas/{{ $p->id }}/edit">Editar</a>
+              <a href="/pessoas/{{ $p->id }}">Excluir</a>
             </td>
           </tr>
         @endforeach
