@@ -33,24 +33,20 @@ class PessoaController extends Controller
         return redirect('/pessoas');
     }
 
-    public function show($id)
+    public function show(Pessoa $pessoa)
     {
-        $pessoa = Pessoa::find($id);
+        // $pessoa = Pessoa::find($id);
 
         return view('pessoas.show', compact('pessoa'));
     }
 
-    public function edit($id)
+    public function edit(Pessoa $pessoa)
     {
-        $pessoa = Pessoa::find($id);
-
         return view('pessoas.form', compact('pessoa'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Pessoa $pessoa)
     {
-        $pessoa = Pessoa::find($id);
-
         $pessoa->nome = $request->nome;
         $pessoa->telefone = $request->telefone;
         $pessoa->email = $request->email;
@@ -60,10 +56,8 @@ class PessoaController extends Controller
         return redirect('/pessoas');
     }
 
-    public function destroy($id)
+    public function destroy(Pessoa $pessoa)
     {
-        $pessoa = Pessoa::find($id);
-
         $pessoa->delete();
 
         return redirect('/pessoas');
