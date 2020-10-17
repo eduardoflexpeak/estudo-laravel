@@ -30,7 +30,11 @@
             <td>{{ $p->nome }}</td>
             <td>{{ $p->telefone }}</td>
             <td>{{ $p->email }}</td>
-            <td>...</td>
+            <td>
+              <!-- Essa linha faz tal coisa 1 -->
+              {{-- Essa linha faz tal coisa 2 --}}
+              <a href="/pessoas/{{ $p->id }}/edit">Editar</a>
+            </td>
           </tr>
         @endforeach
       </table>
