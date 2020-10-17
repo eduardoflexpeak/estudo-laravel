@@ -8,7 +8,10 @@ class PessoaController extends Controller
 {
     public function index()
     {
-        return view('pessoas.index');
+        // $pessoas = \App\Pessoa::all();
+        $pessoas = \App\Pessoa::paginate(10);
+
+        return view('pessoas.index', compact('pessoas'));
     }
 
     public function create()
