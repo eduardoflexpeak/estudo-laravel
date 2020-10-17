@@ -22,6 +22,7 @@ class PessoaController extends Controller
 
     public function store(Request $request)
     {
+        /*
         $pessoa = new Pessoa();
 
         $pessoa->nome = $request->nome;
@@ -29,6 +30,8 @@ class PessoaController extends Controller
         $pessoa->email = $request->email;
 
         $pessoa->save();
+        */
+        Pessoa::create($request->all());
 
         return redirect('/pessoas');
     }
@@ -47,11 +50,14 @@ class PessoaController extends Controller
 
     public function update(Request $request, Pessoa $pessoa)
     {
+        /*
         $pessoa->nome = $request->nome;
         $pessoa->telefone = $request->telefone;
         $pessoa->email = $request->email;
 
         $pessoa->save();
+        */
+        $pessoa->update($request->all());
 
         return redirect('/pessoas');
     }
