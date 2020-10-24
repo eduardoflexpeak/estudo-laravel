@@ -27,4 +27,11 @@ Route::get('pessoas/{pessoa}', 'PessoaController@show');
 Route::delete('pessoas/{pessoa}', 'PessoaController@destroy');
 */
 
-Route::resource('pessoas', 'PessoaController');
+Route::middleware('auth')->group(function () {
+    // Aqui dentro ficam as rotas protegidas
+    Route::resource('pessoas', 'PessoaController');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
