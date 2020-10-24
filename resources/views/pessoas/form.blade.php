@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Formulário de Pessoa</title>
-</head>
-<body>
+@extends('template.base')
+
+@section('titulo', 'Formulário de Pessoa')
+
+@section('conteudo')
     <h1>Formulário de Pessoa</h1>
 
     @if (isset($pessoa))
@@ -23,5 +19,4 @@
     </form>
 
     <a href="/pessoas">Voltar</a>
-</body>
-</html>
+@endsection
