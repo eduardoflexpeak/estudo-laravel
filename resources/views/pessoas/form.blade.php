@@ -18,6 +18,10 @@
         @enderror
         <input class="form-control" type="text" name="telefone" placeholder="Telefone" value="{{ $pessoa->telefone ?? '' }}">
         <input class="form-control" type="email" name="email" placeholder="Email" value="{{ $pessoa->email ?? '' }}">
+        <input class="form-control" type="text" name="cpf" placeholder="CPF" value="{{ $pessoa->cpf ?? '' }}">
+        @error('cpf')
+            <small class="text-danger">{{ $message }}</small>
+        @enderror
         <input class="btn btn-primary" type="submit" value="Salvar">
     </form>
 

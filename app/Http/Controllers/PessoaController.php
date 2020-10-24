@@ -57,7 +57,7 @@ class PessoaController extends Controller
         return view('pessoas.form', compact('pessoa'));
     }
 
-    public function update(Request $request, Pessoa $pessoa)
+    public function update(StorePessoaPost $request, Pessoa $pessoa)
     {
         /*
         $pessoa->nome = $request->nome;
